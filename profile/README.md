@@ -37,7 +37,37 @@ HushNet takes the opposite approach:
 > Just pure encrypted communication, wherever you choose to host it.
 
 ---
+## 🔐 Encryption Model
 
+HushNet uses a **modern E2EE architecture** inspired by the **Signal Double Ratchet** protocol.  
+Each user’s device maintains its own key state and updates it after every message,  
+ensuring *forward secrecy* and *post-compromise security*.
+
+### 🧭 Flow Overview
+
+```mermaid
+sequenceDiagram
+    participant A as Alice (Client)
+    participant SA as Alice's Server
+    participant SB as Bob's Server
+    participant B as Bob (Client)
+
+    Note over A,B: Prekey generation & publication phase
+    A->>SA: Publishes Identity Key + Signed PreKey + One-Time PreKeys
+    B->>SB: Publishes Identity Key + Signed PreKey + One-Time PreKeys
+
+    Note over A,B: Session setup
+    A->>SB: Retrieves Bob’s prekeys
+    A->>A: Derives shared secret (X3DH)
+    A->>SA: Sends Encrypted Message (via Double Ratchet)
+    SA-->>SB: Forwards Encrypted Message
+    SB-->>B: Delivers Ciphertext
+
+    Note over B: Session established
+    B->>B: Decrypts with derived shared secret
+    B->>A: Replies using updated Double Ratchet keys
+```
+---
 ## 🧩 How It Works
 
 - The **HushNet App** (client) manages keys, sessions, and encrypted messages locally.  
