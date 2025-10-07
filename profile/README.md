@@ -108,6 +108,23 @@ Encryption replaces trust. Openness replaces authority.
 
 ---
 
+## 👤 About Me
+
+I’m **Adam Elaoumari**, a cybersecurity engineer and software developer passionate about privacy, cryptography, and open systems.  
+I’m currently completing a dual MSc in **Cyber Security (University of Kent, UK)** and **Information Technology (EPITECH, France)**.
+
+I spend most of my time designing and building secure architectures — from **end-to-end encryption protocols** to **network analysis and evasion-resilient detection systems**.  
+
+**HushNet** is my way of turning years of study and experimentation into something concrete:  
+a proof that **privacy can be practical, open, and self-hosted**.  
+
+You can explore more of my work here:  
+🔗 [github.com/AdamLBS](https://github.com/AdamLBS)  
+🌍 [admlbs.fr](https://admlbs.fr)
+
+
+---
+
 ## ⚖️ License
 
 Everything under **HushNet** is open source and free to use, study, or modify.  
